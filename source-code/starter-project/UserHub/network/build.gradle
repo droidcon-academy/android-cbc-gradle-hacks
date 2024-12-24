@@ -1,14 +1,15 @@
 plugins {
     id 'com.android.library'
     id 'org.jetbrains.kotlin.android'
-    id 'org.jetbrains.kotlin.plugin.serialization' version '1.9.22'
+    id 'org.jetbrains.kotlin.plugin.serialization' version '2.0.0'
     id 'kotlin-kapt'
     id 'com.google.dagger.hilt.android'
+    id 'org.jetbrains.kotlin.plugin.compose' version "2.0.0"
 }
 
 android {
     namespace 'com.droidcon.network'
-    compileSdk 34
+    compileSdk 35
 
     defaultConfig {
         minSdk 30
@@ -43,9 +44,11 @@ dependencies {
     implementation 'io.ktor:ktor-client-content-negotiation:2.3.8'
     implementation 'io.ktor:ktor-serialization-kotlinx-json:2.3.5'
 
-    implementation 'com.google.dagger:hilt-android:2.50'
-    kapt 'com.google.dagger:hilt-compiler:2.50'
-    
+    implementation 'com.google.dagger:hilt-android:2.51.1'
+    kapt 'com.google.dagger:hilt-compiler:2.51.1'
+
+    implementation("androidx.compose.runtime:runtime:1.7.6")
+
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'

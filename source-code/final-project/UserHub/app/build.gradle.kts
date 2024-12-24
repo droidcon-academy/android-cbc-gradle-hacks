@@ -2,6 +2,7 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.hilt)
+    alias(libs.plugins.kotlin.compose)
     kotlin("kapt")
 }
 
@@ -45,6 +46,8 @@ dependencies {
     kapt(libs.hilt.compiler)
 
     implementation(projects.data)
+
+    implementation(libs.compose.runtime)
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
